@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <form id="form" novalidate>
+          <h1>Sign Up</h1>
+            Custom Color : <input type="color" id="colorpicker" attribute onchange="changecolor(this)">
+            <div class="buttoncontainer">
+                <button type="button"  id="#light-mode-toggle" class="lmode" onclick="lightmode()" >Light Mode</button>
+                <button type="button"  id="#dark-mode-toggle" class="dmode" onclick="darkmode()">Dark Mode</button>
+            </div>
+
+            <h2>Login Form</h2>
+            <div class="input">
+               <label for="username"> UserName : </label><br>
+               <input type="text" id="username" placeholder="John Doe" ><br>
+                 <!-- Error message to display -->
+                 <div class="error" id="firstnameerror"></div>
+              
+
+              </div>
+         
+           <div class="input password-input">
+            <label for="password"> Password : </label><br>
+             <input id="password"  type="password" placeholder="Enter your password"><br>
+               <i class="bi bi-eye-slash" id="togglePassword" onclick="togglePassword()"></i>
+              <div class="error" id="passworderror"></div>
+            </div>
+
+           Remember Me:<input type="checkbox">
+           <button type="submit" id="subbutt" onclick="openpopup()">Login</button>
+
+          <h2>User Preferences Storage</h2> 
+          <div class="pref">
+           <label for="language">Language:</label> 
+            <select id="language" onchange="changelanguage()">
+             <option value="fr">French</option>
+             <option value="en">English</option>
+             <option value="es">Spanish</option>
+            </select>
+
+            <label for="fsize">Size:</label> 
+            <select id="fsize" onchange="changefont(this)">
+            <option>X-Small</option>
+             <option>Small</option>
+             <option>Medium</option>
+             <option>Large</option>
+             <option>X-Large</option>
+            </select>
+          </div>
+
+          <h2>Game Score Tracker</h2>
+         <div class="score"> <p>Current Score:</p><div id="num">0</div></div>
+         <div class="score"> <p>Highest Score:</p><div id="hnum">0</div></div>
+
+          <button type="button" class="game" onclick="game()">Play Game</button>
+          <button type="button" class="reset" onclick="Reset()">Reset All Fields and Preferences</button>
+         
+      </form>
+      
+  </div>
+</body>
+</html>
