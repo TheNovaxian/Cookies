@@ -1,3 +1,4 @@
+
 function darkmode() {
     var body = document.body;
     body.classList.add('dark-mode');
@@ -124,3 +125,23 @@ function internalCookie(){
 
     console.log(document.cookie);  
 }
+
+function changefontsize() {
+    var select = document.getElementById('fontsize');
+    var fontsize = select.options[select.selectedIndex].value;
+    var form = document.getElementById('form');
+    form.style.fontSize = fontsize;
+    document.cookie = `fontsize=${fontsize}; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/`;
+}
+
+
+function changefont(fs){
+    document.body.style.fontSize = fs.value;
+}
+
+// function changelanguage(select){
+//     var select = document.getElementById("language");
+//     var lang = select.value;
+
+//     document.documentElement.lang = lang;
+// }
