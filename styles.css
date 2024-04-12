@@ -101,7 +101,7 @@ margin-top: 25px;
 /* moving the eye around */
 #togglePassword {
    position: absolute;
-   top: 53%;
+   top: 67%;
    right:5px;
    transform: translateY(-50%);
    cursor: pointer;

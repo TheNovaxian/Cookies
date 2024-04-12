@@ -20,14 +20,32 @@ function closepopup(){
     
     let hide = document.getElementById('form');
     hide.style.display = 'block';
-    
+
      // hide remember me button
     let hideremember = document.querySelector('.rme');
     hideremember.style.display = 'none';
 
-
+    document.cookie = `Username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
+    document.cookie = `password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
+    document.cookie = `color=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
+    document.cookie = `fontsize=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
+    document.cookie = `language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
+    document.cookie = `score=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
   }
 
+  function togglePassword() {
+    var password = document.getElementById("password");
+    var togglePasswordIcon = document.getElementById("togglePassword");
+    if (password.type === "password") {
+        password.type = "text";
+        togglePasswordIcon.classList.remove("bi-eye-slash");
+        togglePasswordIcon.classList.add("bi-eye");
+    } else {
+        password.type = "password";
+        togglePasswordIcon.classList.remove("bi-eye");
+        togglePasswordIcon.classList.add("bi-eye-slash");
+    }
+}
 
 function changecolor(el) {
     document.body.style.backgroundColor = el.value;
