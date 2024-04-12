@@ -1,27 +1,53 @@
+function darkmode() {
+    var body = document.body;
+    body.classList.add('dark-mode');
+    body.classList.remove('light-mode'); 
+
+    // var colorpicker = document.getElementById('colorpicker');
+    // colorpicker.value = '';
+
+    document.body.style.backgroundColor = '';
+    document.cookie = "theme=dark; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/"; // Set cookie for dark mode
+}
+
+function lightmode() {
+    var body = document.body;
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode'); 
+
+    // var colorpicker = document.getElementById('colorpicker');
+    // colorpicker.value = '';
+
+
+
+    document.body.style.backgroundColor = '';
+    document.cookie = "theme=light; expires=Thu, 01 Jan 2026 00:00:00 UTC; path=/"; 
+}
+
 function openpopup(){
     popup.classList.add("open-popup")
     let hide = document.getElementById('form');
     hide.style.display = 'none';
-  }
+}
 
 window.onload = function(){
-   openpopup();
+    openpopup();
 }
 
 function closepopup(){
     popup.classList.remove("open-popup")
-   
+    
     let hide = document.getElementById('form');
     hide.style.display = 'block';
-  }
+}
 
-  function closepopup2(){
+function closepopup2(){
     popup.classList.remove("open-popup")
     
     let hide = document.getElementById('form');
     hide.style.display = 'block';
 
-     // hide remember me button
+    // hide remember me button
     let hideremember = document.querySelector('.rme');
     hideremember.style.display = 'none';
 
@@ -31,9 +57,10 @@ function closepopup(){
     document.cookie = `fontsize=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
     document.cookie = `language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
     document.cookie = `score=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
-  }
+    document.cookie = `theme=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`; 
+}
 
-  function togglePassword() {
+function togglePassword() {
     var password = document.getElementById("password");
     var togglePasswordIcon = document.getElementById("togglePassword");
     if (password.type === "password") {
@@ -49,30 +76,6 @@ function closepopup(){
 
 function changecolor(el) {
     document.body.style.backgroundColor = el.value;
-  }
-
-
-  function darkmode() {
-    var body = document.body;
-    body.classList.add('dark-mode');
-
-    var colorpicker = document.getElementById('colorpicker');
-    colorpicker.value = '';
-
-    body.style.backgroundColor = '';
-   
-    
-}
-
-function lightmode() {
-    var body = document.body;
-    body.classList.remove('dark-mode');
-
-    var colorpicker = document.getElementById('colorpicker');
-    colorpicker.value = '';
-
-    body.style.backgroundColor = '';
-    
 }
 
 function game(){
@@ -82,7 +85,6 @@ function game(){
     num.textContent = score;
 
     if(score > highscore.textContent){
-        
         highscore.textContent = score;
     }
 }
@@ -102,7 +104,6 @@ function Reset(){
     document.body.style.backgroundColor = '';
 }
 
-
 function internalCookie(){
     let username = document.getElementById('username');
     let password = document.getElementById('password');
@@ -111,6 +112,7 @@ function internalCookie(){
     let language = document.getElementById('language');
     let selectedLanguage = language.options[language.selectedIndex].value;
     let score = document.getElementById('hnum');
+    let theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
 
     document.cookie = `Username=${username.value}`; 
     document.cookie = `password=${password.value}`; 
@@ -118,20 +120,7 @@ function internalCookie(){
     document.cookie = `fontsize=${fontsize.value}`; 
     document.cookie = `language=${selectedLanguage}`; 
     document.cookie = `score=${score.textContent}`; 
+    document.cookie = `theme=${theme}`; 
 
-    console.log(document.cookie);
-    
+    console.log(document.cookie);  
 }
-
-
-
-// function changefont(fs){
-//     document.body.style.fontSize = fs.value;
-// }
-
-// function changelanguage(select){
-//     var select = document.getElementById("language");
-//     var lang = select.value;
-
-//     document.documentElement.lang = lang;
-// }
