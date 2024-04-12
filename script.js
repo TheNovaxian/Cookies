@@ -17,10 +17,15 @@ function closepopup(){
 
   function closepopup2(){
     popup.classList.remove("open-popup")
-
+    
+    let hide = document.getElementById('form');
+    hide.style.display = 'block';
+    
      // hide remember me button
-    let rememberMeSection = document.querySelector('.rme');
-    rememberMeSection.style.display = 'none';
+    let hideremember = document.querySelector('.rme');
+    hideremember.style.display = 'none';
+
+
   }
 
 
