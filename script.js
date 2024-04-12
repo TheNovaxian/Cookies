@@ -1,5 +1,7 @@
 function openpopup(){
     popup.classList.add("open-popup")
+    let hide = document.getElementById('form');
+    hide.style.display = 'none';
   }
 
 window.onload = function(){
@@ -8,11 +10,19 @@ window.onload = function(){
 
 function closepopup(){
     popup.classList.remove("open-popup")
+   
+    let hide = document.getElementById('form');
+    hide.style.display = 'block';
+  }
+
+  function closepopup2(){
+    popup.classList.remove("open-popup")
 
      // hide remember me button
     let rememberMeSection = document.querySelector('.rme');
     rememberMeSection.style.display = 'none';
   }
+
 
 function changecolor(el) {
     document.body.style.backgroundColor = el.value;
