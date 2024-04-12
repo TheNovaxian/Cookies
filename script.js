@@ -1,3 +1,19 @@
+function openpopup(){
+    popup.classList.add("open-popup")
+  }
+
+window.onload = function(){
+   openpopup();
+}
+
+function closepopup(){
+    popup.classList.remove("open-popup")
+
+     // hide remember me button
+    let rememberMeSection = document.querySelector('.rme');
+    rememberMeSection.style.display = 'none';
+  }
+
 function changecolor(el) {
     document.body.style.backgroundColor = el.value;
   }
@@ -52,6 +68,29 @@ function Reset(){
 
     document.body.style.backgroundColor = '';
 }
+
+
+function internalCookie(){
+    let username = document.getElementById('username');
+    let password = document.getElementById('password');
+    let color = document.getElementById('colorpicker');
+    let fontsize = document.getElementById('fsize');
+    let language = document.getElementById('language');
+    let selectedLanguage = language.options[language.selectedIndex].value;
+    let score = document.getElementById('hnum');
+
+    document.cookie = `Username=${username.value}`; 
+    document.cookie = `password=${password.value}`; 
+    document.cookie = `color=${color.value}`; 
+    document.cookie = `fontsize=${fontsize.value}`; 
+    document.cookie = `language=${selectedLanguage}`; 
+    document.cookie = `score=${score.textContent}`; 
+
+    console.log(document.cookie);
+    
+}
+
+
 
 // function changefont(fs){
 //     document.body.style.fontSize = fs.value;
